@@ -10,7 +10,9 @@
     ],
     "files":[
     	"app.ts",
-    	"routes/index.ts",
         "models/Model.ts"
+    ],
+    "include":[
+        "routes/*"
     ]
 }

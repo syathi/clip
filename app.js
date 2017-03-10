@@ -5,7 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
-// const users = require('./routes/users');
+var toppage = require('./routes/top');
+var mypage = require('./routes/mypage');
+//const regist = require('./routes/regist');
+var login = require('./routes/login');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,6 +21,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
+app.use('/top', toppage);
+app.use('/mypage', mypage);
+//app.use('/regist', regist);
+app.use('/login', login);
 // app.use('/users', users);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -30,6 +37,7 @@ app.use(function (err, req, res, next) {
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     // render the error page
     res.status(err.status || 500);
+    console.log();
     res.render('error');
 });
 module.exports = app;

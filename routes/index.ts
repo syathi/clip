@@ -16,10 +16,10 @@ rout.post('/login', (req, res, next) => {
     	})
     .then((dbRes) => {
     	if(dbRes.length == 1){
-    		res.send("ok");
+    		res.redirect("/top");
     		res.end();
     	} else {
-    		res.send("bad");
+    		res.redirect("/");
     		res.end();
     	}
     });

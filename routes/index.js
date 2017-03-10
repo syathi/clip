@@ -13,11 +13,11 @@ rout.post('/login', function (req, res, next) {
     })
         .then(function (dbRes) {
         if (dbRes.length == 1) {
-            res.send("ok");
+            res.redirect("/top");
             res.end();
         }
         else {
-            res.send("bad");
+            res.redirect("/");
             res.end();
         }
     });
