@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 くらいみんぐSNS
+  p 自分のグレードとか課題を共有しよう！
+  form(
+    method="post"
+    action="/login"
+  )
+    p ユーザ名
+    input(
+  	  type="user"
+  	  name="user"
+    )
+    p パスワード
+    input(
+  	  type="password"
+  	  name="password"
+    )
+    br
+    button(
+      type="submit"
+      name="action"
+      value="submit"
+    ) ログイン

@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false
+    },
+    "exclude": [
+    	"node_modules"
+    ],
+    "files":[
+    	"app.ts",
+    	"routes/index.ts",
+        "models/Model.ts"
+    ]
+}
