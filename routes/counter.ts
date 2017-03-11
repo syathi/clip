@@ -18,10 +18,10 @@ routes4.post('/create', (req, res, next) => {
     	attempt     : req.body.attempt,
     	isclear     : clear,
     	comments    : req.body.comment
-    }).then( () => {
-    	res.redirect("/top");
-    	res.end();
+    }).then( (result) => {
+    		console.log(result);
+    		res.redirect("/top");
+    		//res.end();
     	} );
-	res.end();
 });
 module.exports = routes4;
