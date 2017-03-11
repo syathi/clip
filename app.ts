@@ -10,6 +10,8 @@ const toppage = require('./routes/top');
 const mypage  = require('./routes/mypage');
 //const regist = require('./routes/regist');
 const login   = require('./routes/login');
+const uplode  = require("./routes/uplode");
+const counter = require("./routes/counter");
 const app = express();
 
 // view engine setup
@@ -24,11 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',       index);
-app.use('/top',    toppage);
+app.use('/'      , index);
+app.use('/top'   , toppage);
 app.use('/mypage', mypage);
 //app.use('/regist', regist);
-app.use('/login', login);
+app.use('/login' , login);
+app.use('/uplode', uplode);
+app.use('/counter', counter);
 // app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -41,10 +45,9 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+ 
   // render the error page
   res.status(err.status || 500);
-  console.log();
   res.render('error');
 });
 

@@ -9,11 +9,11 @@ routes.post('/login', function (req, res, next) {
         .then(function (dbRes) {
         if (dbRes.length == 1) {
             console.log(res);
-            res.redirect("top");
+            res.redirect("top", { message: "successed login" });
             res.end();
         }
         else {
-            res.redirect("/");
+            res.redirect("/", { message: "failed to login" });
             res.end();
         }
     });

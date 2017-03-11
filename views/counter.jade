@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  h1 完投記録
+  p 挑戦してる課題の記録をしよう！
+  form(
+    method="post"
+    action="/counter/create"
+  )
+    p ユーザ名
+    input(
+  	  type="text"
+  	  name="user"
+    )
+    p 岩場/ジム名
+    input(
+      stype="text"
+      name="area"
+    )
+    p 課題名
+    input(
+  	  type="text"
+  	  name="name"
+    )
+    p グレード
+    input(
+      type="text"
+      name="grade"
+    )
+    p アテンプト数
+    input(
+      id="attempt"
+      type="number"
+      name="attempt"
+      value="0"
+    )
+    p 完登
+    input(
+      type="checkbox"
+      name="isclear"
+    )
+    p コメント
+    input(
+      type="text"
+      name="comment"
+    )
+    br
+    button(
+      type="submit"
+      name="action"
+      value="submit"
+    ) 投稿する

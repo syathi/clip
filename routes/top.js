@@ -6,11 +6,7 @@ route2.post('/', function (req, res, next) {
     res.end();
 });
 route2.get('/', function (req, res, next) {
-    console.log("hoge");
-    console.log(req);
-    console.log(res);
-    res.render("top");
-    // res.render("top");
-    // res.end();
+    res.render("/top");
+    res.end();
 });
 module.exports = route2;

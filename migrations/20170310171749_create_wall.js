@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     if (!exists) {
       return knex.schema.createTable('wall', function(t) {
         t.increments('id').primary();
+        t.string('user');
         t.string('gim');
         t.string('problem_name');
         t.string('grade');

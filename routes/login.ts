@@ -10,10 +10,10 @@ routes.post('/login', (req, res, next) => {
     .then((dbRes) => {
     	if(dbRes.length == 1){
             console.log(res);
-    		res.redirect("top");
+    		res.redirect("top", {message: "successed login"});
     		res.end();
     	} else {
-    		res.redirect("/");
+    		res.redirect("/", {message: "failed to login"});
     		res.end();
     	}
     });
