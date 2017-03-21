@@ -19,7 +19,6 @@ routes4.post('/create', function (req, res, next) {
     }).then(function (result) {
         console.log(result);
         res.redirect("/top");
-        //res.end();
     });
 });
 module.exports = routes4;

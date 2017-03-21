@@ -9,22 +9,4 @@ rout.get('/', function(req, res, next) {
 	res.end();
 });
 
-rout.post('/login', (req, res, next) => {
-    knex("user").where({
-    		user    : req.body.user,
-    		password: req.body.password
-    	})
-    .then((dbRes) => {
-    	if(dbRes.length == 1){
-    		res.redirect("/top");
-    		res.end();
-    	} else {
-    		res.redirect("/");
-    		res.end();
-    	}
-    });
-	console.log(req.body.user);
-	console.log(req.body.password);
-});
-
 module.exports = rout;

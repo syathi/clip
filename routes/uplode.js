@@ -2,7 +2,6 @@ var exp3 = require('express');
 var routes3 = exp3.Router();
 var knex3 = require('../models/Model');
 routes3.get('/', function (req, res, next) {
-    console.log("hoge");
     res.render("uplode");
     res.end();
 });
